@@ -1,0 +1,54 @@
+.apply-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #111;
+  border: 2px solid #ff00ff;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.apply-container h1 {
+  color: #ff00ff;
+  margin-bottom: 20px;
+}
+
+.apply-form input,
+.apply-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ff00ff;
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.apply-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.apply-form button {
+  background-color: #ff00ff;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.apply-form button:hover {
+  background-color: #fff;
+  color: #ff00ff;
+}
+
+.success-msg {
+  color: #00ff99;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
