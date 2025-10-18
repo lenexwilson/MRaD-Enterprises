@@ -70,7 +70,7 @@ function ContactUs() {
         </label>
 
         <div className="recaptcha">
-          <ReCAPTCHA sitekey="6LfjxMwrAAAAANTdfixbZHveO3zYNNzPc3gMA4Bx" onChange={value => setFormData({ ...formData, isHuman: !!value })} />
+          <ReCAPTCHA sitekey="6LeBrO4rAAAAAMcUvHLK_qMWpRWZSoHHwYT5gFTO" onChange={value => setFormData({ ...formData, isHuman: !!value })} />
         </div>
 
         <button type="submit">Send Message</button>
