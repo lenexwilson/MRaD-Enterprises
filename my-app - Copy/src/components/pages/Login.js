@@ -8,15 +8,17 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  // Create an Axios instance with baseURL from environment variable
+  const API = axios.create({
+    baseURL: process.env.REACT_APP_API_BASE_URL, // Use .env variable
+    withCredentials: true, // If your backend uses cookies
+  });
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://mrad-enterprises.onrender.com/api/auth/login", {
-        email,
-        password,
-      });
-
+      const res = await API.post("/api/auth/login", { email, password });
       const { token, user } = res.data;
 
       if (!token || !user) {
@@ -24,12 +26,13 @@ function Login() {
         return;
       }
 
-      // Save token and role
+      // Save token, role, and userId in localStorage
       localStorage.setItem("token", token);
       localStorage.setItem("role", user.role.toLowerCase());
       localStorage.setItem("userId", user.id);
+      localStorage.setItem("email", user.email); // optional, store email
 
-      // Redirect based on role
+      // Redirect based on user role
       const userRole = user.role.toLowerCase();
       if (userRole === "admin") navigate("/admin/messages");
       else if (userRole === "employee") navigate("/employees");
